@@ -20,6 +20,7 @@ def flip_horizontal_axis(matrix):
         # Traverse all columns
         for col in range(0, cols):
         
+            # Flip horizontally mirrored indexes
             temp = matrix[row][col]
             matrix[row][col] = matrix[rows-1-row][col]
             matrix[rows-1-row][col] = temp 
