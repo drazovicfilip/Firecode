@@ -1,6 +1,5 @@
-pre_ordered_list = []
 class BinaryTree:
- 
+
     def __init__(self, root_data):
         self.data = root_data
         self.left_child = None
@@ -18,5 +17,26 @@ class BinaryTree:
     def set_root_val(self, obj):
         self.data = obj
 
-    def get_root_val(self):
+    def get_data(self):
         return self.data
+
+    def addLeft(self, value):
+
+        if self.left_child == None:
+            self.left_child = BinaryTree(value)
+        
+        # If the left slot is taken, we need to make a new edge
+        else:
+            toInsert = BinaryTree(value)
+            self.left_child.left_child = toInsert
+
+    def addRight(self, value):
+
+        if self.right_child == None:
+            self.right_child = BinaryTree(value)
+    
+        # If the right slot is taken, we need to make a new edge
+        else:
+            toInsert = BinaryTree(value)
+            self.right_child.right_child = toInsert
+
